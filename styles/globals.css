@@ -6,4 +6,7 @@
   .link {
     @apply hover:underline cursor-pointer;
   }
+  .btn {
+    @apply bg-gray-50 p-3 rounded-md text-sm text-gray-700 hover:ring-1 ring-gray-300 focus:outline-none active:ring-1 active:ring-gray-400 hover:shadow-md;
+  }
 }
