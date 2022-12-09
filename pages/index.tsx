@@ -2,8 +2,18 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import { Footer, Header } from "../components"
+import { useRouter } from "next/router"
+import { useRef } from "react"
 
 const Home: NextPage = () => {
+  const router = useRouter()
+  const searchInputRef = useRef(null)
+  function search(event) {
+    event.preventDefault()
+    const term = searchInputRef.current.value
+    if (!term.trim()) return
+    router.push(`/search?term=${term.trim()}`)
+  }
   return (
     <div>
       <Head>
@@ -39,7 +49,7 @@ const Home: NextPage = () => {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-          <input type="text" className="flex-grow focus:outline-none" />
+          <input ref={searchInputRef} type="text" className="flex-grow focus:outline-none" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -56,7 +66,7 @@ const Home: NextPage = () => {
           </svg>
         </div>
         <div className="flex flex-col justify-center sm:flex-row w-1/2 space-y-2 mt-8 sm:space-y-0 sm:space-x-4">
-          <button className="btn">Google Search</button>
+          <button onClick={search} className="btn">Google Search</button>
           <button className="btn">I fell lucky</button>
         </div>
       </form>
