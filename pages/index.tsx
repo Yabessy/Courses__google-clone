@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     event.preventDefault()
     const term = searchInputRef.current.value
     if (!term.trim()) return
-    router.push(`/search?term=${term.trim()}`)
+    router.push(`/search?term=${term.trim()}&searchType=`)
   }
   return (
     <div>
