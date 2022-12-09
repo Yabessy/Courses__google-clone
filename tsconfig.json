@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/User.jsx", "pages/auth/signin.jsx", "pages/auth/signin.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/User.jsx", "pages/auth/signin.jsx", "pages/auth/signin.js", "Response.ts"],
   "exclude": ["node_modules"]
 }
