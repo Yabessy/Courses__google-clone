@@ -1,3 +1,4 @@
-import Header from "./Header";
-import Footer from "./Footer";
-export { Header, Footer };
+import Header from "./Header"
+import Footer from "./Footer"
+import SearchHeader from "./SearchHeader"
+export { Header, Footer, SearchHeader }
