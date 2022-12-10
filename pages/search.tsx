@@ -4,17 +4,18 @@ import { SearchHeader } from "../components"
 import { useRouter } from "next/router"
 import SearchResults from "../components/SearchResults"
 import Response from "../Response"
+import ImageResults from "../components/ImageResults"
 
 export default function search({ results }) {
+  console.log(results)
   const router = useRouter()
   return (
     <div>
       <Head>
         <title>{router.query.term} - Search</title>
       </Head>
-
       <SearchHeader />
-      <SearchResults results={results}/>
+      {router.query.searchType === "image" ? <ImageResults results={results}/> : <SearchResults results={results}/>}
     </div>
   )
 }
