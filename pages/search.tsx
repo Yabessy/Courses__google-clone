@@ -6,7 +6,7 @@ import SearchResults from "../components/SearchResults"
 import Response from "../Response"
 import ImageResults from "../components/ImageResults"
 
-export default function search({ results }) {
+export default function search({ results }:any) {
   console.log(results)
   const router = useRouter()
   return (
@@ -20,7 +20,7 @@ export default function search({ results }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context:any) {
   const startIndex = context.query.start || "1"
   const mockdata = false
   const data = mockdata

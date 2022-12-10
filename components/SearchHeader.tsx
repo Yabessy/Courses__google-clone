@@ -8,8 +8,9 @@ import { MagnifyingGlassIcon, XMarkIcon, MicrophoneIcon } from "@heroicons/react
 export default function SearchHeader() {
   const router = useRouter()
   const searchInputRef = useRef(null)
-  function search(e) {
+  function search(e:any) {
     e.preventDefault()
+    // @ts-ignore
     const term = searchInputRef.current.value
     if (!term.trim()) return
     router.push(`/search?term=${term.trim()}&searchType=`)

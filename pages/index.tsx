@@ -9,13 +9,14 @@ import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/24/outline
 const Home: NextPage = () => {
   const router = useRouter()
   const searchInputRef = useRef(null)
-  function search(event) {
+  function search(event:any) {
     event.preventDefault()
+    // @ts-ignore
     const term = searchInputRef.current.value
     if (!term.trim()) return
     router.push(`/search?term=${term.trim()}&searchType=`)
   }
-  async function randomSearch(event) {
+  async function randomSearch(event:any) {
     event.preventDefault()
     const randomTerm = await fetch("https://random-word-api.herokuapp.com/word?number=1").then((res) => res.json())
     if (!randomTerm) return

@@ -2,14 +2,14 @@ import React from "react"
 import Parser from "html-react-parser"
 import PaginationButtons from "./PaginationButtons"
 
-export default function SearchResults({ results }) {
+export default function SearchResults({ results }:any) {
   return (
     <div className="w-full mx-auto px-3 sm:pl-[5%] md:pl-[14%] lg:pl-52">
       <p className="text-gray-600 text-sm mt-3 mb-5">
         About {results.searchInformation.formattedTotalResults} results (
         {results.searchInformation.formattedSearchTime}s)
       </p>
-      {results.items.map((result) => (
+      {results.items.map((result:any) => (
         <div className="max-w-xl mb-8" key={result.link}>
           <div className="group">
             <a className="text-sm truncate" href={result.link}>

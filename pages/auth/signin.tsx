@@ -2,12 +2,12 @@ import React from "react"
 import { Header } from "../../components"
 import { getProviders, signIn } from "next-auth/react"
 
-export default function signin({ providers }) {
+export default function signin({ providers }:any) {
   return (
     <>
       <Header />
       <div>
-        {Object.values(providers).map((provider) => (
+        {Object.values(providers).map((provider:any) => (
           <div key={provider.name} className="flex flex-col items-center mt-40">
             <img
             className="w-52 object-cover "
