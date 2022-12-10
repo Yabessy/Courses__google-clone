@@ -1,17 +1,20 @@
 import Head from "next/head"
 import React from "react"
 import { SearchHeader } from "../components"
+import { useRouter } from "next/router"
+import SearchResults from "../components/SearchResults"
 import Response from "../Response"
 
 export default function search({ results }) {
-  console.log(results)
+  const router = useRouter()
   return (
     <div>
       <Head>
-        <title>Ini Mbak/Mas</title>
+        <title>{router.query.term} - Search</title>
       </Head>
 
       <SearchHeader />
+      <SearchResults results={results}/>
     </div>
   )
 }
