@@ -1,9 +1,9 @@
 import React from "react"
 import { useRouter } from "next/router"
 
-export default function SearchHeaderOption({ title, Icon, selected }) {
+export default function SearchHeaderOption({ title, Icon, selected }:any) {
   const router = useRouter()
-  function selectab(title) {
+  function selectab(title:any) {
     router.push(`/search?term=${router.query.term}&searchType=${title === "Images" ? "image" : ""}`)
   }
   return (
