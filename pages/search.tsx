@@ -22,7 +22,7 @@ export default function search({ results }) {
 
 export async function getServerSideProps(context) {
   const startIndex = context.query.start || "1"
-  const mockdata = true
+  const mockdata = false
   const data = mockdata
     ? Response
     : await fetch(
