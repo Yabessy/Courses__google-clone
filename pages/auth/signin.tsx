@@ -14,7 +14,7 @@ export default function signin({ providers }) {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
               alt="google"
             />
-            <p className="text-sm italic mb-4 mt-10 text-center">Google is mine</p>
+            <p className="text-sm italic mb-4 mt-10 text-center">Google is mine hehe :)</p>
             <button onClick={()=>signIn(provider.id,{callbackUrl:"/"})} className="bg-blue-500 rounded-lg hover:drop-shadow-md text-white cursor-pointer px-7 py-3">SignIn with {provider.name}</button>
           </div>
         ))}
