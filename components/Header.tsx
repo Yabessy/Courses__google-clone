@@ -20,7 +20,7 @@ export default function Header() {
         <p className="link">gmail</p>
       </Link>
         <a onClick={()=>router.push(`/search?term=${router.query.term || "google"}&searchType=image`)} className="link">images</a>
-        <User />
+        <User style={""} />
       </div>
     </header>
   )
