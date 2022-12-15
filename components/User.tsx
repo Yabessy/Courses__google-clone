@@ -1,16 +1,18 @@
-import React from "react"
-import { useSession, signIn, signOut } from "next-auth/react"
+import { signOut } from "firebase/auth"
+import { useRouter } from "next/router"
+import { auth } from "../firebase"
 
-export default function User({style}:any) {
-  const { data: session, status } = useSession()
-  if (status === "authenticated") {
+export default function User({ style }: any) {
+  const router = useRouter()
+  if (auth.currentUser) {
     return (
       <>
         <img
-          onClick={() => signOut()}
+          onClick={async () => await signOut(auth)}
           // @ts-ignore
-          src={session.user?.image}
-          alt=""
+          src={auth.currentUser.photoURL}
+          alt="userImage"
+          referrerPolicy="no-referrer"
           className={`${style} cursor-pointer h-10 w-10 rounded-full`}
         />
       </>
@@ -19,9 +21,8 @@ export default function User({style}:any) {
   return (
     <>
       <button
-        onClick={() => signIn()}
-        className={`${style} bg-blue-500 rounded-lg hover:drop-shadow-md text-white cursor-pointer px-7 py-3`}
-      >
+        onClick={() => router.push("/signin")}
+        className={`${style} bg-blue-500 rounded-lg hover:drop-shadow-md text-white cursor-pointer px-7 py-3`}>
         SignIn
       </button>
     </>
